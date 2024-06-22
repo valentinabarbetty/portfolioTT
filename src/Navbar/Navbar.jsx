@@ -39,7 +39,7 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-        <div className="hamburger" onClick={handleMenuClick}>
+        <div className={`hamburger ${menuOpen ? "menu-open" : ""}`} onClick={handleMenuClick}>
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
