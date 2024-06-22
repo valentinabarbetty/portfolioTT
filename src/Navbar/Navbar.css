@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+.italiana-regular {
+  font-family: 'Italiana', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  
+  
+}
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    padding: 15px;
+    display: flex; 
+    align-items: center; 
+    color: black;
+    
+  }
+  
+  .nav-right {
+    float: right;
+    font-size: 20px !important;
+  }
+  
+  .nav-left {
+    float: left;
+    font-size: 30px !important;
+    margin-top: -10px !important;
+  }
+  
+
+  .navbar .icon {
+    margin-right: 8px;
+    display: inline-flex; 
+    align-items: center; 
+  }
+  
