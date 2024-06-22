@@ -1,35 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { TfiWorld } from "react-icons/tfi";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <div>
-      <nav className="navbar">
-        <ul>
-          <li className="italiana-regular nav-left">
-            <a href="/">Valentina</a>
-          </li>
-          <li className="nav-right">
-            <a href="/">Contact</a>
-          </li>
-          <li className="nav-right">
-            <a href="/">Projects</a>
-          </li>
-          <li className="nav-right">
-            <a href="/">Skills</a>
-          </li>
-          <li className="nav-right">
-            <a href="/">About Me</a>
-          </li>
-          <li className="nav-right">
-            <a href="/">
-              <span className="icon"><TfiWorld /></span> ES
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <header className="header">
+      <div className="content">
+        <a className="italiana-regular logo" href="/">
+          Valentina
+        </a>
+        <nav className={`navbar ${menuOpen ? "menu" : ""}`}>
+          <ul className="content">
+            <li>
+              <a href="/">
+                <span className="icon">
+                  <TfiWorld />
+                </span>{" "}
+                ES
+              </a>
+            </li>
+            <li>
+              <a href="/">About Me</a>
+            </li>
+            <li>
+              <a href="/">Skills</a>
+            </li>
+            <li>
+              <a href="/">Projects</a>
+            </li>
+            <li>
+              <a href="/">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div className="hamburger" onClick={handleMenuClick}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+      </div>
+    </header>
   );
 };
 

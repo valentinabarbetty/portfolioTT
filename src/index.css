@@ -5,8 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 60px;
 }
-
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white; /* Ensure header background covers padding */
+  z-index: 1000; /* Ensure header stays on top of other content */
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
