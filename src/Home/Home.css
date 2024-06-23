@@ -1,45 +1,161 @@
+body {
+    margin: 0;
+    /* Reset default margin */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+}
+
+.app {
+    max-width: 100%;
+    /* Ensure app takes full width of viewport */
+    margin: 0 auto;
+    /* Center the app horizontally */
+}
 
 .container {
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
+    padding-right: 50px;
+    margin: 0 auto;
+    /* Center the container horizontally */
+}
 
-  }
-
-
-  /* .photo {
-
-  }
-  
-  
-  .text {
-   
-
-  }
-   */
-
-   .image {
+.image {
     width: 450px;
     height: 450px;
     margin-top: 50px;
-    margin-left: 100px;
-  }
+    margin-bottom: 20px;
+    /* Add margin bottom to create space between image and text */
+    transition: opacity 0.4s, width 0.4s, height 0.4s;
+}
 
-  .right {
-    margin-top: 100px;
+.right {
+    margin-top: 70px;
     margin-right: 10px;
-    font-size: 45px;
+    font-size: 50px;
     text-align: left;
+    padding: 10px;
+    flex-direction: column;
+    /* Display children in a column */
+    align-items: center;
+    transition: all 0.3s;
+}
 
-   
-  }
-  .p {
+.p {
     white-space: nowrap;
     margin-bottom: 10px;
-    
-  }
-  .description {
-    margin-top: -10px !important;
-    font-size: 30px;
+}
 
-    
-  }
+.description {
+    margin-top: -10px;
+    /* Remove !important and adjust as necessary */
+    font-size: 40px;
+}
+
+.cv-btn {
+    margin: 0px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #D9D9D9;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.4s;
+}
+
+.cv-btn:hover {
+    opacity: 0.6;
+}
+
+.contact-btn {
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.4s;
+}
+
+.contact-btn:hover {
+    opacity: 0.6;
+}
+
+.gh {
+    width: 6vw;
+    /* Adjust size as needed */
+    margin-top: 20px;
+    padding: 10px;
+    /* Provide space between buttons and image */
+}
+
+@media (max-width: 650px) {
+    .container {
+        flex-direction: column;
+        /* Stack items vertically when viewport is 650px or narrower */
+        align-items: center;
+        /* Center items horizontally */
+        padding-right: 0px;
+        /* Adjust padding for better spacing */
+    }
+
+    .image {
+        width: 180px;
+        /* Adjusted size for smaller screens */
+        height: 180px;
+        align-self: center;
+        /* Align the image itself to the center */
+        margin-bottom: -10px;
+        /* Optional: Add margin at the bottom for spacing */
+    }
+
+    .right {
+        width: 100%;
+        /* Take full width of the container */
+        text-align: center;
+        /* Center text content */
+        margin-top: -10px;
+        font-size: 6vw;
+        /* Adjust margin for spacing */
+    }
+
+    .description {
+        margin-top: -10px;
+        /* Remove !important and adjust as necessary */
+        font-size: 4vw;
+    }
+
+    .cv-btn {
+        margin: 10px;
+        padding: 10px;
+        font-size: 3.5vw;
+        border-radius: 20px;
+        background-color: #D9D9D9;
+        color: black;
+        border: none;
+        cursor: pointer;
+        transition: opacity 0.4s;
+    }
+    .contact-btn {
+        margin: 10px;
+        padding: 10px;
+        font-size: 3.5vw;
+        border-radius: 20px;
+        background-color: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: opacity 0.4s;
+    }
+    .gh {
+        width: 10vw;
+        /* Adjust size as needed */
+        margin-top: 20px;
+        padding: 10px;
+        /* Provide space between buttons and image */
+    }
+}
