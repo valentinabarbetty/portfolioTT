@@ -1,3 +1,45 @@
-body {
-    padding-top: 60px;
-}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+
+  /* .photo {
+
+  }
+  
+  
+  .text {
+   
+
+  }
+   */
+
+   .image {
+    width: 450px;
+    height: 450px;
+    margin-top: 50px;
+    margin-left: 100px;
+  }
+
+  .right {
+    margin-top: 100px;
+    margin-right: 10px;
+    font-size: 45px;
+    text-align: left;
+
+   
+  }
+  .p {
+    white-space: nowrap;
+    margin-bottom: 10px;
+    
+  }
+  .description {
+    margin-top: -10px !important;
+    font-size: 30px;
+
+    
+  }
