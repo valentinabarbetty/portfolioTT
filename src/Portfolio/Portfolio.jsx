@@ -4,12 +4,16 @@ import Home from "../Home/Home";
 import AboutMe from "../AboutMe/AboutMe";
 import "./Portfolio.css";
 import Skills from "../Skills/Skills";
+import Projects from "../Projects/Projects";
+import Contact from "../Contact/Contact";
 
 const Portfolio = () => {
   const homeRef = useRef(null);
   const aboutMeRef = useRef(null);
   const skillsRef = useRef(null);
-
+  const projectsRef = useRef(null);
+  const contactsRef = useRef(null);
+  
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -21,7 +25,7 @@ const Portfolio = () => {
       });
     });
 
-    const elements = [homeRef.current, aboutMeRef.current, skillsRef.current];
+    const elements = [homeRef.current, aboutMeRef.current, skillsRef.current, projectsRef.current, contactsRef.current];
     elements.forEach((element) => {
       if (element) observer.observe(element);
     });
@@ -44,6 +48,12 @@ const Portfolio = () => {
       </section>
       <section ref={skillsRef} className="hidden skills">
         <Skills />
+      </section>
+      <section ref={projectsRef} className="hidden projects">
+        <Projects />
+      </section>
+      <section ref={contactsRef} className="hidden contacts">
+        <Contact />
       </section>
     </div>
   );

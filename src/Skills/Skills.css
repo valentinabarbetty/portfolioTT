@@ -1,5 +1,4 @@
-
-    .skills-container {
+.skills-container {
         display: flex;
         justify-content: space-between;
         max-width: 1200px;

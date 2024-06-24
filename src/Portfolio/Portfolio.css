@@ -24,15 +24,6 @@ section {
   scroll-snap-align: start;
 }
   
-
-
-.ab-me{
-
-}
-
-.skills {
-
-}
 .portfolio {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
