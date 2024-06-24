@@ -97,9 +97,13 @@ body {
     /* Adjust size as needed */
     margin-top: 20px;
     padding: 10px;
+    opacity: 1;
+    transition: opacity 0.4s;
     /* Provide space between buttons and image */
 }
-
+.gh:hover {
+    opacity: 0.8;
+}
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
@@ -163,7 +167,11 @@ body {
         /* Adjust size as needed */
         margin-top: 20px;
         padding: 10px;
+        opacity: 1;
         /* Provide space between buttons and image */
+    }
+    .gh:hover {
+        opacity: 0.8;
     }
 }
 @media (max-width: 650px) {
@@ -229,6 +237,10 @@ body {
         /* Adjust size as needed */
         margin-top: 20px;
         padding: 10px;
+        opacity: 1;
         /* Provide space between buttons and image */
+    }
+    .gh:hover {
+        opacity: 0.8;
     }
 }

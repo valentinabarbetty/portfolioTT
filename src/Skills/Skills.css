@@ -1,0 +1,11 @@
+
+    .skills-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        padding-right: 50px;
+        margin-top: 400px !important;
+        margin: 0 auto;
+        min-height: 500vh;
+    
+}
