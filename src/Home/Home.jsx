@@ -1,7 +1,8 @@
 import React from "react";
 import "./Home.css";
+import { TfiMouse } from "react-icons/tfi";
 
-const Home = () => {
+const Home = ({ language }) => {
   return (
     <div className="parent">
       <div className="container">
@@ -13,10 +14,22 @@ const Home = () => {
           />
         </div>
         <div className="right">
-          <p className="p">Hi, I'm Valentina Barbetty</p>
-          <p className="description">Fullstack developer</p>
-          <button className="cv-btn">Download my CV</button>{" "}
-          <button className="contact-btn">Contact Me</button>
+          <p className="p">
+            {language === "EN"
+              ? "Hi, I'm Valentina Barbetty"
+              : "Hola, Soy Valentina Barbetty"}
+          </p>
+          <p className="description">
+            {language === "EN"
+              ? "Fullstack Developer"
+              : "Desarrolladora Fullstack"}
+          </p>
+          <button className="cv-btn">
+            {language === "EN" ? "Download my CV" : "Descargar mi CV"}
+          </button>{" "}
+          <button className="contact-btn">
+            {language === "EN" ? "Contact Me" : "Contáctame"}
+          </button>
           <div>
             <a
               href="https://github.com/valentinabarbetty"
@@ -35,6 +48,12 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <p className="scroll-down">
+        <span className="icon">
+          <TfiMouse />
+        </span>{"   "} &nbsp;
+        {language === "EN" ? "Scroll down" : "Desliza hacia abajo"}
+      </p>
     </div>
   );
 };

@@ -7,7 +7,7 @@ import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
 
-const Portfolio = () => {
+const Portfolio = ({ language, setLanguage }) => {
   const homeRef = useRef(null);
   const aboutMeRef = useRef(null);
   const skillsRef = useRef(null);
@@ -39,21 +39,21 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio">
-      <Navbar />
+      <Navbar language={language} setLanguage={setLanguage}/>
       <section ref={homeRef} className="hidden home">
-        <Home />
+        <Home language={language}/>
       </section>
       <section ref={aboutMeRef} className="hidden ab-me">
-        <AboutMe />
+        <AboutMe language={language}/>
       </section>
       <section ref={skillsRef} className="hidden skills">
-        <Skills />
+        <Skills language={language}/>
       </section>
       <section ref={projectsRef} className="hidden projects">
-        <Projects />
+        <Projects language={language}/>
       </section>
       <section ref={contactsRef} className="hidden contacts">
-        <Contact />
+        <Contact language={language}/>
       </section>
     </div>
   );

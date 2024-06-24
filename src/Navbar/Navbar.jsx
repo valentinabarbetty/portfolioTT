@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { TfiWorld } from "react-icons/tfi";
 
-const Navbar = () => {
+const Navbar = ({ language, setLanguage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuClick = () => {
     setMenuOpen(!menuOpen);
+  };
+  const handleLanguageChange = (e) => {
+    e.preventDefault();
+    setLanguage(language === "EN" ? "ES" : "EN");
   };
 
   return (
@@ -18,24 +22,24 @@ const Navbar = () => {
         <nav className={`navbar ${menuOpen ? "menu" : ""}`}>
           <ul className="content">
             <li>
-              <a href="/">
+              <a href="/" onClick={handleLanguageChange}>
                 <span className="icon">
                   <TfiWorld />
                 </span>{" "}
-                ES
+                {language === "EN" ? "ES" : "EN"}
               </a>
             </li>
             <li>
-              <a href="/">About Me</a>
+              <a href="/">{language === "EN" ? "About Me" : "Sobre mí"}</a>
             </li>
             <li>
-              <a href="/">Skills</a>
+              <a href="/">{language === "EN" ? "Skills" : "Habilidades"}</a>
             </li>
             <li>
-              <a href="/">Projects</a>
+              <a href="/">{language === "EN" ? "Projects" : "Proyectos"}</a>
             </li>
             <li>
-              <a href="/">Contact</a>
+              <a href="/">{language === "EN" ? "Contact" : "Contacto"}</a>
             </li>
           </ul>
         </nav>

@@ -1,10 +1,10 @@
 import React from "react";
 import "./Projects.css"
 
-const Projects = () => {
+const Projects = ({language}) => {
   return (
     <section className="projects-container">
-      <div>Projects</div>
+      <div>{language === "EN" ? "Projects" : "Proyectos"}</div>
       <div>Education</div>
     </section>
   );
