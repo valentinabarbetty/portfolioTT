@@ -34,7 +34,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div>
+    <div className="portfolio">
       <Navbar />
       <section ref={homeRef} className="hidden home">
         <Home />
