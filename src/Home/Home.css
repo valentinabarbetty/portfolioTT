@@ -2,6 +2,7 @@ body {
     margin: 0;
     /* Reset default margin */
     overflow-x: hidden;
+    overflow: hidden;
     /* Prevent horizontal scrolling */
 }
 
@@ -23,23 +24,23 @@ body {
     justify-content: space-between;
     max-width: 1200px;
     padding-right: 50px;
-    margin-top: 100px !important;
+    margin-top: 150px !important;
     margin: 0 auto;
+
     /* Center the container horizontally */
 }
 
 .image {
     width: 450px;
     height: 450px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    /* Add margin bottom to create space between image and text */
+    margin-top: -5px;
+    justify-content: center;
     transition: opacity 0.4s, width 0.4s, height 0.4s;
 }
 
 .right {
-    margin-top: 70px;
-    margin-right: 10px;
+    justify-content: center;
+    margin-right: 20px;
     font-size: 50px;
     text-align: left;
     padding: 10px;
@@ -51,17 +52,17 @@ body {
 
 .p {
     white-space: nowrap;
-    margin-bottom: 10px;
+   
 }
 
 .description {
-    margin-top: -10px;
+    margin-top: 0px;
     /* Remove !important and adjust as necessary */
     font-size: 30px;
 }
 
 .cv-btn {
-    margin: 0px;
+   
     padding: 10px;
     font-size: 20px;
     border-radius: 20px;
@@ -104,20 +105,39 @@ body {
 .gh:hover {
     opacity: 0.8;
 }
+@media(max-width:1085px) {
+    .right {
+        justify-content: center;
+        margin-right: 20px;
+        font-size: 40px;
+        text-align: left;
+        padding: 10px;
+        flex-direction: column;
+        /* Display children in a column */
+        align-items: center;
+        transition: all 0.3s;
+    }
+    .image {
+        width: 400px;
+        height: 400px;
+        margin-top: -5px;
+        justify-content: center;
+        transition: opacity 0.4s, width 0.4s, height 0.4s;
+    }
+    
+}
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
-        /* Stack items vertically when viewport is 650px or narrower */
-        align-items: center;
-        /* Center items horizontally */
+        align-items: center !important;
         padding-right: 0px;
-        /* Adjust padding for better spacing */
+        align-self: center !important;
     }
 
     .image {
-        width: 30vw;
+        width: 45vw;
         /* Adjusted size for smaller screens */
-        height: 30vw;
+        height: 45vw;
         align-self: center;
         /* Align the image itself to the center */
         margin-bottom: -10px;
@@ -126,12 +146,9 @@ body {
 
     .right {
         width: 100%;
-        /* Take full width of the container */
         text-align: center;
-        /* Center text content */
         margin-top: -10px;
         font-size: 4vw;
-        /* Adjust margin for spacing */
     }
 
     .description {
@@ -177,11 +194,9 @@ body {
 @media (max-width: 650px) {
     .container {
         flex-direction: column;
-        /* Stack items vertically when viewport is 650px or narrower */
-        align-items: center;
-        /* Center items horizontally */
+        align-items: center !important;
         padding-right: 0px;
-        /* Adjust padding for better spacing */
+        align-self: center !important;
     }
 
     .image {
@@ -196,12 +211,9 @@ body {
 
     .right {
         width: 100%;
-        /* Take full width of the container */
         text-align: center;
-        /* Center text content */
         margin-top: -10px;
         font-size: 5vw;
-        /* Adjust margin for spacing */
     }
 
     .description {

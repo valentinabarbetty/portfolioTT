@@ -8,10 +8,10 @@
     min-height: 500vh;
 }
 
-.left{
-    margin-top: 200px;
-    margin-right: 300px;
-    margin-left: -200px;
+.left-ab{
+    justify-content: center;
+    margin-right: 100px;
+    margin-left: 30px;
     text-align: left;
     padding: 10px;
     flex-direction: column;
@@ -34,15 +34,15 @@
     margin-bottom: 10px;
 }
 
-.right{
-    margin-top: 200px;
-    margin-right: 200px;
-    font-size: 50px;
+.right-ab{
+    margin-top: 100px !important;
+    justify-content: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 40px;
     text-align: left;
-    padding: 10px;
     flex-direction: column;
-    /* Display children in a column */
-    align-items: center;
+   
     transition: all 0.3s;
 }
 .scroll-down {
@@ -53,3 +53,4 @@
     display: flex;
     align-items: center;
 }
+

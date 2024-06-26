@@ -5,7 +5,7 @@ const AboutMe = ({ language }) => {
   return (
     <div>
       <section className="ab-container">
-        <div className="left">
+        <div className="left-ab">
           <div className="title-left">
             <p>{language === "EN" ? "About Me" : "Acerca de Mi"}</p>
           </div>
@@ -22,9 +22,20 @@ const AboutMe = ({ language }) => {
           </div>
         </div>
 
-        <div className="right">
+        <div className="right-ab">
           {" "}
           {language === "EN" ? "Education" : "Eduación"}
+          <div className="p-left">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+              sapiente, optio aut amet necessitatibus libero dolor alias nemo
+              fugit, et, veniam obcaecati ipsa nesciunt in possimus quis error
+              quisquam quasi. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Asperiores, at sunt itaque voluptate debitis
+              ullam a eligendi dolorum quam doloremque quos reiciendis
+              accusantium libero aspernatur hic! Illum animi incidunt atque!
+            </p>
+          </div>
         </div>
       </section>
       <p className="scroll-down">
