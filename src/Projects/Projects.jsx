@@ -6,6 +6,7 @@ const Projects = ({language}) => {
     <section className="projects-container">
       <div>{language === "EN" ? "Projects" : "Proyectos"}</div>
       <div>Education</div>
+      <div>dfs</div>
     </section>
   );
 };

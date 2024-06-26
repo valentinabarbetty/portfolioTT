@@ -6,35 +6,35 @@
     margin-top: 400px !important;
     margin: 0 auto;
     min-height: 500vh;
-}
-
-.left-ab{
+  }
+  
+  .left-ab {
     justify-content: center;
     margin-right: 100px;
     margin-left: 30px;
     text-align: left;
     padding: 10px;
     flex-direction: column;
-    /* Display children in a column */
     align-items: center;
     transition: all 0.3s;
-
-}
-.title-left {
+  }
+  
+  .title-left {
     font-size: 50px;
-}
-.p-left{
+  }
+  
+  .p-left {
     font-size: 20px;
     text-align: justify;
     line-height: 2;
-
-}
-.p {
+  }
+  
+  .p {
     white-space: nowrap;
     margin-bottom: 10px;
-}
-
-.right-ab{
+  }
+  
+  .right-ab {
     margin-top: 100px !important;
     justify-content: center;
     margin-right: 10px;
@@ -42,15 +42,30 @@
     font-size: 40px;
     text-align: left;
     flex-direction: column;
-   
     transition: all 0.3s;
+  }
+  
+  .education-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+.checkpoint {
+    max-width: 34em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
 }
-.scroll-down {
+.checkpoint div{
+    border: 2px;
+}
+  
+  .scroll-down {
     position: absolute;
     bottom: 100px;
     right: 100px;
     font-size: 18px;
     display: flex;
     align-items: center;
-}
-
+  }
+  
