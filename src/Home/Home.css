@@ -14,9 +14,9 @@ body {
 }
 .parent {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75vh; /* Full height of the viewport */
+    justify-content: center !important;
+    align-items: center !important;
+   
 }
 
 .container {

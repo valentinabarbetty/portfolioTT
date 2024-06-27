@@ -23,10 +23,19 @@ section {
   
   height: 100vh;
   scroll-snap-align: start;
+  justify-content: center mandatory !important ; 
+  justify-self: center mandatory !important;
+  
 }
   
 .portfolio {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+}
+.ab-me {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+ 
 }
