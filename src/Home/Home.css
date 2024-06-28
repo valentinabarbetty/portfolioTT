@@ -12,21 +12,19 @@ body {
     margin: 0 auto;
     /* Center the app horizontally */
 }
-.parent {
-    display: flex;
-    justify-content: center !important;
-    align-items: center !important;
-   
-}
+
 
 .container {
+    height: 100vh;
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
     padding-right: 50px;
-    margin-top: 150px !important;
+    margin-top: -20px !important;
     margin: 0 auto;
-
+    justify-content: center !important;
+    align-items: center !important;
+    vertical-align: middle !important;
     /* Center the container horizontally */
 }
 

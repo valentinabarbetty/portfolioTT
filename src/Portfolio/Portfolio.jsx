@@ -40,15 +40,15 @@ const Portfolio = ({ language, setLanguage }) => {
   return (
     <div className="portfolio">
       <Navbar language={language} setLanguage={setLanguage}/>
-      <section ref={homeRef} className="hidden home">
+      <section ref={homeRef} className="hidden">
         <Home language={language}/>
       </section>
-      
       <section ref={aboutMeRef} className=" hidden">
 
         <AboutMe language={language}/>
       
       </section>
+      {/* 
       <section ref={skillsRef} className="hidden skills">
         <Skills language={language}/>
       </section>
@@ -57,7 +57,7 @@ const Portfolio = ({ language, setLanguage }) => {
       </section>
       <section ref={contactsRef} className="hidden contacts">
         <Contact language={language}/>
-      </section>
+      </section> */}
     </div>
   );
 };

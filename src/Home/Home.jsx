@@ -4,7 +4,7 @@ import { TfiMouse } from "react-icons/tfi";
 
 const Home = ({ language }) => {
   return (
-    <div className="parent">
+    <div >
       <div className="container">
         <div className="image-container">
           <img

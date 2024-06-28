@@ -4,8 +4,8 @@ import { TfiMouse } from "react-icons/tfi";
 
 const AboutMe = ({ language }) => {
   return (
-    <div className="dad">
     <div className="centered">
+
       <section className="ab-container">
         <div className="left-ab">
           <div className="title-left">
@@ -53,7 +53,7 @@ const AboutMe = ({ language }) => {
         {language === "EN" ? "Scroll down" : "Desliza hacia abajo"}
       </p>
     </div>
-    </div>
+
   );
 };
 
