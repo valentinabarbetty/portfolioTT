@@ -17,29 +17,29 @@ const Skills = ({ language }) => {
               : "Lenguajes de Programación"}
           </h1>
           <div className="lang-grid">
-            <div>
+            <div className="imgdiv">
               <img src="/tech/python.png" alt="" className="imagen" />
               <p>Python</p>
             </div>
-            <div>
-              <img src="/tech/typescript.png" alt="" className="imagen" />
+            <div className="imgdiv">
+              <img src="/tech/ts.png" alt="" className="imagen" />
               <p>Typescript</p>
             </div>
-            <div>
+            <div className="imgdiv">
               <img src="/tech/js.png" alt="" className="imagen" />
               <p>Javascript</p>
             </div>
           </div>
           <div className="lang-grid">
-            <div>
+            <div className="imgdiv">
               <img src="/tech/java.png" alt="" className="imagen" />
               <p>Java</p>
             </div>
-            <div>
-              <img src="/tech/html.svg" alt="" className="imagen" />
+            <div className="imgdiv">
+              <img src="/tech/html.png" alt="" className="imagen" />
               <p>Html</p>
             </div>
-            <div>
+            <div className="imgdiv">
               <img src="/tech/css.png" alt="" className="imagen" />
               <p>CSS</p>
             </div>
@@ -53,29 +53,29 @@ const Skills = ({ language }) => {
               : "Herramientas y Tecnologías"}
           </h1>
           <div className="lang-grid">
-            <div>
+            <div className="imgdiv">
               <img src="/tech/github.png" alt="" className="imagen" />
               <p>GitHub</p>
             </div>
-            <div>
-              <img src="/tech/figma.webp" alt="" className="imagen" />
+            <div className="imgdiv">
+              <img src="/tech/figma.png" alt="" className="imagen" />
               <p>Figma</p>
             </div>
-            <div>
-              <img src="/tech/jira.webp" alt="" className="imagen" />
+            <div className="imgdiv">
+              <img src="/tech/jira.png" alt="" className="imagen" />
               <p>Jira</p>
             </div>
           </div>
           <div className="lang-grid">
-            <div>
-              <img src="/tech/trello.webp" alt="" className="imagen" />
+            <div className="imgdiv">
+              <img src="/tech/trello.png" alt="" className="imagen" />
               <p>Trello</p>
             </div>
-            <div>
-              <img src="/tech/firebase.webp" alt="" className="imagen" />
+            <div className="imgdiv">
+              <img src="/tech/firebase.png" alt="" className="imagen" />
               <p>Firebase</p>
             </div>
-            <div>
+            <div className="imgdiv">
               <img src="/tech/git.png" alt="" className="imagen" />
               <p>Git</p>
             </div>
@@ -92,15 +92,15 @@ const Skills = ({ language }) => {
               : "Frameworks y Librerías"}
           </h1>
           <div className="lang-grid">
-            <div>
+            <div className="imgdiv">
               <img src="/tech/angular.png" alt="" className="imagen" />
               <p>Angular</p>
             </div>
-            <div>
+            <div className="imgdiv">
               <img src="/tech/react.png" alt="" className="imagen" />
               <p>React</p>
             </div>
-            <div>
+            <div className="imgdiv">
               <img src="/tech/nodejs.png" alt="" className="imagen" />
               <p>Node.js</p>
             </div>
@@ -114,15 +114,15 @@ const Skills = ({ language }) => {
               : "Bases de Datos"}
           </h1>
           <div className="lang-grid">
-            <div>
+            <div className="imgdiv">
               <img src="/tech/mysql.png" alt="" className="imagen" />
               <p>MySQL</p>
             </div>
-            <div>
-              <img src="/tech/firebase.webp" alt="" className="imagen" />
+            <div className="imgdiv">
+              <img src="/tech/firebase.png" alt="" className="imagen" />
               <p>Firebase</p>
             </div>
-            <div>
+            <div className="imgdiv">
               <img src="/tech/mongodb.png" alt="" className="imagen" />
               <p>MongoDB</p>
             </div>

@@ -6,7 +6,7 @@ const AboutMe = ({ language }) => {
   return (
     <div className="centered">
 
-      <section className="ab-container">
+      <div className="ab-container">
         <div className="left-ab">
           <div className="title-left">
             <p>{language === "EN" ? "About Me" : "Acerca de Mi"}</p>
@@ -44,7 +44,7 @@ const AboutMe = ({ language }) => {
           </div>
           </div>
         </div>
-      </section>
+      </div>
       <p className="scroll-down">
         <span className="icon">
           <TfiMouse />

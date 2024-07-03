@@ -1,13 +1,25 @@
 import React from "react";
-import "./Projects.css"
+import "./Projects.css";
 
-const Projects = ({language}) => {
+const Projects = ({ language }) => {
   return (
-    <section className="projects-container">
-      <div>{language === "EN" ? "Projects" : "Proyectos"}</div>
-      <div>Education</div>
-      <div>dfs</div>
-    </section>
+    <div className="height">
+      <div className="title-sk">
+        <h1>{language === "EN" ? "Projects" : "Proyectos"}</h1>
+      </div>
+
+      <div className="skills-container">
+        <div className="card-container">
+          <div className="card">
+            <div className="front"></div>
+            <div className="back">
+              <h1>Technologies</h1>
+              <p>Roles</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

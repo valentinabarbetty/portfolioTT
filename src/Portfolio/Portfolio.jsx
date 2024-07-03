@@ -43,19 +43,20 @@ const Portfolio = ({ language, setLanguage }) => {
       <section ref={homeRef} className="hidden">
         <Home language={language}/>
       </section>
-      <section ref={aboutMeRef} className=" hidden">
+      <section ref={aboutMeRef} className="hidden">
 
         <AboutMe language={language}/>
       
       </section>
       
-      <section ref={skillsRef} className="hidden skills">
+      <section ref={skillsRef} className="hidden">
         <Skills language={language}/>
       </section>
-      {/* 
+       
       <section ref={projectsRef} className="hidden projects">
         <Projects language={language}/>
       </section>
+      {/*
       <section ref={contactsRef} className="hidden contacts">
         <Contact language={language}/>
       </section> */}
