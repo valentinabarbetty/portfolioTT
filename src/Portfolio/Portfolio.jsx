@@ -48,10 +48,11 @@ const Portfolio = ({ language, setLanguage }) => {
         <AboutMe language={language}/>
       
       </section>
-      {/* 
+      
       <section ref={skillsRef} className="hidden skills">
         <Skills language={language}/>
       </section>
+      {/* 
       <section ref={projectsRef} className="hidden projects">
         <Projects language={language}/>
       </section>
