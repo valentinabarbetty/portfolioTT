@@ -6,60 +6,75 @@
         margin: 0 auto;
         align-items: center !important;
         justify-content: center;
-    }
-    
-    .skills-container {
+}
+
+.skills-container {
         max-width: 1200px !important;
         align-items: center !important;
         justify-content: space-between;
         margin: 0 auto;
         display: flex;
         padding: 5px;
-    }
-    
-    .title-sk {
+}
+
+.title-sk {
         margin-top: 100px !important;
         text-align: center;
-    }
-    
-    .imagen {
+}
+
+.imagen {
         width: 40px;
         height: auto;
-    }
-    
-    .lang-grid {
+}
+
+.lang-grid {
         display: flex;
         justify-content: space-between;
         padding: 10px;
-        gap: 20px; /* Adds space between items */
-    }
-    
-    .columns-skills {
+        gap: 20px;
+        /* Adds space between items */
+}
+
+.columns-skills {
         padding: 20px;
         flex: 1;
-    }
-    
-    .imgdiv {
-        width: 80px; /* Adjust as needed */
-        height: 80px; /* Adjust as needed */
+}
+
+.imgdiv {
+        width: 80px;
+        /* Adjust as needed */
+        height: 80px;
+        /* Adjust as needed */
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
         margin: 0 auto;
-    }
-    
-    .imgdiv img {
+}
+
+.imgdiv img {
         width: 40px;
         height: auto;
-    }
-    
-    .imgdiv p {
+        transition: all 0.5s;
+}
+
+.imgdiv p {
         margin-top: 5px;
         font-size: 14px;
-    }
-    
-@media(max-width: 800px){
-        
+}
+.title-cat{
+        font-size: 20px;
+        text-align: center;
+}
+.skills-title{
+        font-size: 30px;
+}
+
+
+@media(max-width: 800px) {
+        .imgdiv img {
+                width: 30px;
+                height: auto;
+        }
 }

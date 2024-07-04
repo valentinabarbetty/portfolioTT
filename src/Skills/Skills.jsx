@@ -5,17 +5,17 @@ const Skills = ({ language }) => {
   return (
     <div className="height">
       <div className="title-sk">
-        <h1>{language === "EN" ? "Skills" : "Habilidades"}</h1>
+        <p className="skills-title">{language === "EN" ? "Skills" : "Habilidades"}</p>
       </div>
 
       <div className="skills-container">
         <div className="columns-skills">
-          <h1>
+          <p className="title-cat">
             {" "}
             {language === "EN"
               ? "Programming languages"
               : "Lenguajes de Programación"}
-          </h1>
+          </p>
           <div className="lang-grid">
             <div className="imgdiv">
               <img src="/tech/python.png" alt="" className="imagen" />
@@ -46,12 +46,12 @@ const Skills = ({ language }) => {
           </div>
         </div>
         <div className="columns-skills">
-          <h1>
+          <p className="title-cat">
             {" "}
             {language === "EN"
               ? "Tools and Technologies"
               : "Herramientas y Tecnologías"}
-          </h1>
+          </p>
           <div className="lang-grid">
             <div className="imgdiv">
               <img src="/tech/github.png" alt="" className="imagen" />
@@ -85,12 +85,12 @@ const Skills = ({ language }) => {
       </div>
       <div className="skills-container">
       <div className="columns-skills">
-          <h1>
+          <p className="title-cat">
             {" "}
             {language === "EN"
               ? "Frameworks and Libraries"
               : "Frameworks y Librerías"}
-          </h1>
+          </p>
           <div className="lang-grid">
             <div className="imgdiv">
               <img src="/tech/angular.png" alt="" className="imagen" />
@@ -107,12 +107,12 @@ const Skills = ({ language }) => {
           </div>
         </div>
         <div className="columns-skills">
-          <h1>
+          <p className="title-cat">
             {" "}
             {language === "EN"
               ? "Databases"
               : "Bases de Datos"}
-          </h1>
+          </p>
           <div className="lang-grid">
             <div className="imgdiv">
               <img src="/tech/mysql.png" alt="" className="imagen" />
