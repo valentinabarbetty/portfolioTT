@@ -40,7 +40,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -57,7 +57,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
     backface-visibility: hidden;
     overflow: hidden;
     background: #252522;
@@ -71,10 +71,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
     backface-visibility: hidden;
     overflow: hidden;
-    background: #aeaeae;
+    background: #dddbdb;
     color: #333;
     text-align: center;
     transform: rotateY(180deg);
@@ -85,16 +85,36 @@
  
   .front h1, .back h1{
     font-family: 'zilla slab', sans-serif;
-    padding: 10px;
+    padding: 0 15px 0 15px;
     font-weight: bold;
     font-size: 24px;
     text-align: center;
   }
   
-  .front p, .back p{
+  .info{
     font-family: 'zilla slab', sans-serif;
-    padding: 30px;
+    padding: 0 15px 0 15px;
     font-weight: normal;
     font-size: 12px;
-    text-align: center;
+    text-align: justify;
+  }
+
+
+  .img-links{
+    width: 20px;
+    padding: 0 5px 0 5px;
+  }
+
+  .titles{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    padding: 4px;
+    border: 0px;
+  }
+  .info-pro{
+    padding: 0 15px 0 15px;
+    font-weight: normal;
+    font-size: 15px;
+    text-align: justify;
   }
