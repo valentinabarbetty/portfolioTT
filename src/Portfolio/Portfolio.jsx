@@ -13,7 +13,7 @@ const Portfolio = ({ language, setLanguage }) => {
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactsRef = useRef(null);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -25,7 +25,13 @@ const Portfolio = ({ language, setLanguage }) => {
       });
     });
 
-    const elements = [homeRef.current, aboutMeRef.current, skillsRef.current, projectsRef.current, contactsRef.current];
+    const elements = [
+      homeRef.current,
+      aboutMeRef.current,
+      skillsRef.current,
+      projectsRef.current,
+      contactsRef.current,
+    ];
     elements.forEach((element) => {
       if (element) observer.observe(element);
     });
@@ -39,27 +45,25 @@ const Portfolio = ({ language, setLanguage }) => {
 
   return (
     <div className="portfolio">
-      <Navbar language={language} setLanguage={setLanguage}/>
+      <Navbar language={language} setLanguage={setLanguage} />
       <section ref={homeRef} className="hidden">
-        <Home language={language}/>
+        <Home language={language} />
       </section>
       <section ref={aboutMeRef} className="hidden">
+        <AboutMe language={language} />
+      </section>
 
-        <AboutMe language={language}/>
-      
+      <section ref={skillsRef} className="hidden">
+        <Skills language={language} />
       </section>
-      
-       <section ref={skillsRef} className="hidden">
-        <Skills language={language}/>
-      </section>
-       
+
       <section ref={projectsRef} className="hidden projects">
-        <Projects language={language}/>
+        <Projects language={language} />
       </section>
-      {/*
+
       <section ref={contactsRef} className="hidden contacts">
-        <Contact language={language}/>
-      </section> */}
+        <Contact language={language} />
+      </section>
     </div>
   );
 };

@@ -1,10 +1,51 @@
-.contact-container {
+.height-contact {
+    height: 100vh !important;
     display: flex;
-    justify-content: space-between;
     max-width: 1200px;
-    padding-right: 50px;
-    margin-top: 400px !important;
+    flex-direction: column;
     margin: 0 auto;
-    min-height: 500vh;
-
-}
+    align-items: center !important;
+    justify-content: center;
+  }
+  
+  .contact-container {
+    flex-direction: column;
+    max-width: 1200px !important;
+    align-items: center !important;
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+    padding: 2px;
+  }
+  
+  .contact {
+    font-size: 40px;
+    margin: 0;
+  }
+  
+  .contact-p {
+    margin: 0;
+  }
+  
+  .fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: rgb(165, 165, 165);
+  }
+  
+  .email {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin: 50px;
+  }
+  
+  .icon-email {
+    font-size: 40px;
+    margin-right: 10px; 
+    margin-top: 10px;
+  }
+  
