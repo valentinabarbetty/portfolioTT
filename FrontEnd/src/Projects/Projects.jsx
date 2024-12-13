@@ -12,10 +12,10 @@ const Projects = ({ language }) => {
     date: "",
     languages: "",
   });
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar la visibilidad del modal
-  const [isViewModalOpen, setIsViewModalOpen] = useState(false); // Estado para controlar la visibilidad del modal de ver proyecto
-  const [projectToEdit, setProjectToEdit] = useState(null); // Estado para el proyecto a editar
-  const [projectToView, setProjectToView] = useState(null); // Estado para el proyecto a ver
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isViewModalOpen, setIsViewModalOpen] = useState(false); 
+  const [projectToEdit, setProjectToEdit] = useState(null); 
+  const [projectToView, setProjectToView] = useState(null);
 
   useEffect(() => {
     fetchProjects();
@@ -104,7 +104,7 @@ const Projects = ({ language }) => {
     <div className="height-pro">
       <div className="title-pro">
         <p>{language === "EN" ? "Projects" : "Proyectos"}</p>
-        {/* Botón de agregar nuevo proyecto */}
+        
         <button className="add-btn" onClick={() => setIsModalOpen(true)}>
           + Add New Project
         </button>
@@ -142,7 +142,7 @@ const Projects = ({ language }) => {
         )}
       </div>
 
-      {/* Modal de visualización del proyecto */}
+
       {isViewModalOpen && (
         <div className="modal">
           <div className="modal-content">
@@ -163,7 +163,7 @@ const Projects = ({ language }) => {
         </div>
       )}
 
-      {/* Modal de edición o creación de proyecto */}
+    
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">

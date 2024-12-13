@@ -160,7 +160,7 @@
   text-align: center;
 }
 
-/* Estilo de los inputs y labels dentro del modal */
+
 input[type="text"],
 input[type="date"],
 textarea {
@@ -177,11 +177,11 @@ textarea {
   height: 100px;
 }
 
-/* Botones */
+
 button {
   padding: 5px 5px;
   margin: 5px;
-  /* background-color: #007bff; */
+ 
   color: white;
   border: none;
   border-radius: 5px;
@@ -193,7 +193,7 @@ button:hover {
   background-color: #a3a5a7;
 }
 
-/* Estilo del formulario */
+
 form {
   display: flex;
   flex-direction: column;
@@ -205,7 +205,7 @@ form div {
   margin-bottom: 10px;
 }
 
-/* Estilo de los títulos */
+
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
