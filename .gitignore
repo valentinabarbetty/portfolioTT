@@ -5,7 +5,7 @@
 
 # Ignorar node_modules en el frontend
 **/FrontEnd/node_modules/
-node_modules
+/node_modules
 /.pnp
 .pnp.js
 
