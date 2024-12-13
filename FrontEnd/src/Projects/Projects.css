@@ -118,3 +118,112 @@
     font-size: 15px;
     text-align: justify;
   }
+
+
+
+  /* Estilo del contenedor principal */
+.height-pro {
+  padding: 20px;
+  
+  font-family: 'Arial', sans-serif;
+}
+
+/* Estilo del contenedor de la tarjeta */
+.card-container {
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo del modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+ 
+
+
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+
+button {
+  padding: 5px 5px;
+  margin: 5px;
+ 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #a3a5a7;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form div {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Fondo y sombra de los botones */
+button[type="submit"] {
+  background-color: #28a745;
+}
+
+button[type="button"] {
+  background-color: #dc3545;
+}
+
+/* Título de los proyectos */
+.title-pro {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
