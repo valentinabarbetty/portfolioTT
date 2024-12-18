@@ -46,22 +46,22 @@ const Portfolio = ({ language, setLanguage }) => {
   return (
     <div className="portfolio">
       <Navbar language={language} setLanguage={setLanguage} />
-      <section ref={homeRef} className="hidden">
+      <section id="home" ref={homeRef} className="hidden">
         <Home language={language} />
       </section>
-      <section ref={aboutMeRef} className="hidden">
+      <section id="about-me" ref={aboutMeRef} className="hidden">
         <AboutMe language={language} />
       </section>
 
-      <section ref={skillsRef} className="hidden">
+      <section id="skills" ref={skillsRef} className="hidden">
         <Skills language={language} />
       </section>
 
-      <section ref={projectsRef} className="hidden projects">
+      <section id="projects" ref={projectsRef} className="hidden projects">
         <Projects language={language} />
       </section>
 
-      <section ref={contactsRef} className="hidden contacts">
+      <section id="contact" ref={contactsRef} className="hidden contacts">
         <Contact language={language} />
       </section>
     </div>
