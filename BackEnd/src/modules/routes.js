@@ -60,27 +60,20 @@ router.get('/proyecto/:id', (req, res) => {
 router.put('/proyecto/:id', (req, res) => {
     const { id } = req.params;
     const { name, description, link, date, languages } = req.body;
-
-    // Validación de los datos
+  
     if (!name || !description || !link || !date || !languages) {
-        return res.status(400).json({ error: 'Todos los campos son obligatorios' });
+      return res.status(400).json({ error: 'All fields are required' });
     }
-
+  
     const query = 'UPDATE projects SET name = ?, description = ?, link = ?, date = ?, languages = ? WHERE id = ?';
-    db.query(query, [name, description, link, date, languages, id], (err, result) => {
-        if (err) {
-            console.error('Error al actualizar el proyecto:', err);
-            return res.status(500).json({ error: 'Error al actualizar el proyecto' });
-        }
-        if (result.affectedRows === 0) {
-            return res.status(404).json({ error: 'Proyecto no encontrado' });
-        }
-        
-        // Respuesta exitosa si la actualización es correcta
-        return res.status(200).json({ message: 'Proyecto actualizado exitosamente' });
+    db.query(query, [name, description, link, date, languages, id], (err) => {
+      if (err) {
+        console.error('Error updating project:', err);
+        return res.status(500).json({ error: 'Error updating project' });
+      }
+      res.status(200).json({ message: 'Project updated successfully' });
     });
-});
-
+  });
 // 5. Eliminar un Proyecto
 router.delete('/proyecto/:id', (req, res) => {
     const { id } = req.params;

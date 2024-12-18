@@ -1,0 +1,13 @@
+
+
+Entrega proyecto final
+Valentina Barbetty Arango
+
+Link repositorio: https://github.com/valentinabarbetty/portfolioTT
+
+Instrucciones de uso:
+1. cd BackEnd
+2. npm run dev
+
+3. cd FrontEnd
+4. npm start
