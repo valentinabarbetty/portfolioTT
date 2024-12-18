@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Projects.css";
-import axios from 'axios';
-import Swal from 'sweetalert2';
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Projects = ({ language }) => {
   const [projects, setProjects] = useState([]);
@@ -12,9 +12,9 @@ const Projects = ({ language }) => {
     date: "",
     languages: "",
   });
-  const [isModalOpen, setIsModalOpen] = useState(false); 
-  const [isViewModalOpen, setIsViewModalOpen] = useState(false); 
-  const [projectToEdit, setProjectToEdit] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isViewModalOpen, setIsViewModalOpen] = useState(false);
+  const [projectToEdit, setProjectToEdit] = useState(null);
   const [projectToView, setProjectToView] = useState(null);
 
   useEffect(() => {
@@ -23,79 +23,100 @@ const Projects = ({ language }) => {
 
   const fetchProjects = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/projects');
-      console.log('Proyectos cargados:', response.data);
+      const response = await axios.get("http://localhost:4000/api/projects");
       setProjects(response.data);
     } catch (error) {
-      console.error('Error al cargar proyectos:', error);
+      console.error("Error al cargar proyectos:", error);
     }
   };
 
   const deleteProject = async (projectId) => {
     const result = await Swal.fire({
-      title: 'Are you sure?',
-      text: 'This action cannot be undone!',
-      icon: 'warning',
+      title: language === "EN" ? "Are you sure?" : "¿Estás seguro?",
+      text:
+        language === "EN"
+          ? "This action cannot be undone!"
+          : "¡Esta acción no se puede deshacer!",
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, cancel!',
+      confirmButtonText:
+        language === "EN" ? "Yes, delete it!" : "Sí, eliminar!",
+      cancelButtonText: language === "EN" ? "No, cancel!" : "No, cancelar!",
     });
 
     if (result.isConfirmed) {
       try {
         await axios.delete(`http://localhost:4000/api/proyecto/${projectId}`);
-        console.log(`Proyecto con ID ${projectId} eliminado con éxito`);
-
-        const response = await axios.get('http://localhost:4000/api/projects');
-        setProjects(response.data);
-
-        Swal.fire('Deleted!', 'Your project has been deleted.', 'success');
+        fetchProjects();
+        Swal.fire(
+          language === "EN" ? "Deleted!" : "Eliminado!",
+          language === "EN"
+            ? "Your project has been deleted."
+            : "Tu proyecto ha sido eliminado.",
+          "success"
+        );
       } catch (error) {
-        console.error('Error al eliminar el proyecto:', error);
-        Swal.fire('Error!', 'There was an error deleting the project.', 'error');
+        console.error("Error al eliminar el proyecto:", error);
+        Swal.fire(
+          language === "EN" ? "Error!" : "¡Error!",
+          language === "EN"
+            ? "There was an error deleting the project."
+            : "Hubo un error al eliminar el proyecto.",
+          "error"
+        );
       }
-    } else {
-      Swal.fire('Cancelled', 'Your project is safe!', 'info');
     }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setNewProject({ ...newProject, [name]: value });
+
+    if (projectToEdit) {
+      setProjectToEdit({ ...projectToEdit, [name]: value });
+    } else {
+      setNewProject({ ...newProject, [name]: value });
+    }
   };
 
   const editProject = (projectId) => {
-    const project = projects.find(p => p.id === projectId);
+    const project = projects.find((p) => p.id === projectId);
     setProjectToEdit(project);
-    setIsModalOpen(true); // Abrir el modal de edición
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setIsViewModalOpen(false); 
+    setIsViewModalOpen(false);
     setProjectToEdit(null);
-    setProjectToView(null);
+    setNewProject({
+      name: "",
+      description: "",
+      link: "",
+      date: "",
+      languages: "",
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       if (projectToEdit) {
-        await axios.put(`http://localhost:4000/api/proyecto/${projectToEdit.id}`, projectToEdit);
-        console.log('Proyecto actualizado');
+        await axios.put(
+          `http://localhost:4000/api/proyecto/${projectToEdit.id}`,
+          projectToEdit
+        );
       } else {
-        await axios.post('http://localhost:4000/api/proyecto', newProject);
-        console.log('Nuevo proyecto creado');
+        await axios.post("http://localhost:4000/api/proyecto", newProject);
       }
       fetchProjects();
       closeModal();
     } catch (error) {
-      console.error('Error al agregar o actualizar el proyecto:', error);
+      console.error("Error al agregar o actualizar el proyecto:", error);
     }
   };
 
   const seeProject = (projectId) => {
-    const project = projects.find(p => p.id === projectId);
+    const project = projects.find((p) => p.id === projectId);
     setProjectToView(project);
     setIsViewModalOpen(true);
   };
@@ -104,15 +125,14 @@ const Projects = ({ language }) => {
     <div className="height-pro">
       <div className="title-pro">
         <p>{language === "EN" ? "Projects" : "Proyectos"}</p>
-        
         <button className="add-btn" onClick={() => setIsModalOpen(true)}>
-          + Add New Project
+          + {language === "EN" ? "Add New Project" : "Agregar Proyecto"}
         </button>
       </div>
 
       <div className="pro-container">
         {projects.length === 0 ? (
-          <p>No results</p>
+          <p>{language === "EN" ? "No results" : "No hay resultados"}</p>
         ) : (
           projects.map((project) => (
             <div className="card-container" key={project.id}>
@@ -122,18 +142,27 @@ const Projects = ({ language }) => {
                   <p className="info-pro">{project.description}</p>
                 </div>
                 <div className="back">
-                  <p className="titles">Herramientas:</p>
+                  <p className="titles">
+                    {language === "EN" ? "Languages:" : "Lenguajes:"}
+                  </p>
                   {project.languages}
-                  <p className="titles">Links: {project.link}</p>
-                  <p className="titles">Fecha: {project.date}</p>
-                  <button target="_blank" rel="noopener noreferrer" onClick={() => seeProject(project.id)}>
-                    <img src="/img/see.png" alt="Link" className="img-links" />
+                  <p className="titles">
+                    {language === "EN" ? "Link:" : "Enlace:"} {project.link}
+                  </p>
+                  <p className="titles">
+                    {language === "EN" ? "Date:" : "Fecha:"} {project.date}
+                  </p>
+                  <button onClick={() => seeProject(project.id)}>
+                    <img src="/img/see.png" alt="View" />
+                    
                   </button>
-                  <button target="_blank" rel="noopener noreferrer" onClick={() => editProject(project.id)}>
-                    <img src="/img/edit.png" alt="Link" className="img-links" />
+                  <button onClick={() => editProject(project.id)}>
+                    <img src="/img/edit.png" alt="Edit" />
+                   
                   </button>
-                  <button target="_blank" rel="noopener noreferrer" onClick={() => deleteProject(project.id)}>
-                    <img src="/img/delete.png" alt="Link" className="img-links" />
+                  <button onClick={() => deleteProject(project.id)}>
+                    <img src="/img/delete.png" alt="Delete" />
+                   
                   </button>
                 </div>
               </div>
@@ -142,79 +171,122 @@ const Projects = ({ language }) => {
         )}
       </div>
 
-
+      {/* Modal to View Project */}
       {isViewModalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <h2>View Project</h2>
+            <h2>{language === "EN" ? "View Project" : "Ver Proyecto"}</h2>
             {projectToView ? (
               <div>
-                <p><strong>Name:</strong> {projectToView.name}</p>
-                <p><strong>Description:</strong> {projectToView.description}</p>
-                <p><strong>Languages:</strong> {projectToView.languages}</p>
-                <p><strong>Link:</strong> <a href={projectToView.link} target="_blank" rel="noopener noreferrer">{projectToView.link}</a></p>
-                <p><strong>Date:</strong> {projectToView.date}</p>
+                <p>
+                  <strong>{language === "EN" ? "Name:" : "Nombre:"}</strong>{" "}
+                  {projectToView.name}
+                </p>
+                <p>
+                  <strong>
+                    {language === "EN" ? "Description:" : "Descripción:"}
+                  </strong>{" "}
+                  {projectToView.description}
+                </p>
+                <p>
+                  <strong>
+                    {language === "EN" ? "Languages:" : "Lenguajes:"}
+                  </strong>{" "}
+                  {projectToView.languages}
+                </p>
+                <p>
+                  <strong>{language === "EN" ? "Link:" : "Enlace:"}</strong>{" "}
+                  <a
+                    href={projectToView.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {projectToView.link}
+                  </a>
+                </p>
+                <p>
+                  <strong>{language === "EN" ? "Date:" : "Fecha:"}</strong>{" "}
+                  {projectToView.date}
+                </p>
               </div>
             ) : (
               <p>Loading...</p>
             )}
-            <button type="button" onClick={closeModal}>Close</button>
+            <button type="button" onClick={closeModal}>
+              {language === "EN" ? "Close" : "Cerrar"}
+            </button>
           </div>
         </div>
       )}
 
-    
+      {/* Modal to Add/Edit Project */}
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <h2>{projectToEdit ? "Edit Project" : "Add New Project"}</h2>
+            <h2>
+              {projectToEdit
+                ? language === "EN"
+                  ? "Edit Project"
+                  : "Editar Proyecto"
+                : language === "EN"
+                ? "Add New Project"
+                : "Agregar Proyecto"}
+            </h2>
             <form onSubmit={handleSubmit}>
               <div>
-                <label>Name:</label>
+                <label>{language === "EN" ? "Name:" : "Nombre:"}</label>
                 <input
                   type="text"
                   name="name"
-                  value={newProject.name || projectToEdit?.name || ''}
-                  onChange={(e) => setNewProject({ ...newProject, name: e.target.value })}
+                  value={projectToEdit?.name || newProject.name}
+                  onChange={handleInputChange}
                 />
               </div>
               <div>
-                <label>Description:</label>
+                <label>
+                  {language === "EN" ? "Description:" : "Descripción:"}
+                </label>
                 <textarea
                   name="description"
-                  value={newProject.description || projectToEdit?.description || ''}
-                  onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
+                  value={projectToEdit?.description || newProject.description}
+                  onChange={handleInputChange}
                 />
               </div>
               <div>
-                <label>Link:</label>
+                <label>{language === "EN" ? "Link:" : "Enlace:"}</label>
                 <input
                   type="text"
                   name="link"
-                  value={newProject.link || projectToEdit?.link || ''}
-                  onChange={(e) => setNewProject({ ...newProject, link: e.target.value })}
+                  value={projectToEdit?.link || newProject.link}
+                  onChange={handleInputChange}
                 />
               </div>
               <div>
-                <label>Date:</label>
+                <label>{language === "EN" ? "Date:" : "Fecha:"}</label>
                 <input
                   type="date"
                   name="date"
-                  value={newProject.date || projectToEdit?.date || ''}
-                  onChange={(e) => setNewProject({ ...newProject, date: e.target.value })}
+                  value={projectToEdit?.date || newProject.date}
+                  onChange={handleInputChange}
                 />
               </div>
               <div>
-                <label>Languages:</label>
+                <label>{language === "EN" ? "Languages:" : "Lenguajes:"}</label>
                 <input
                   type="text"
                   name="languages"
-                  value={newProject.languages || projectToEdit?.languages || ''}
-                  onChange={(e) => setNewProject({ ...newProject, languages: e.target.value })}
+                  value={projectToEdit?.languages || newProject.languages}
+                  onChange={handleInputChange}
                 />
               </div>
-              <button type="submit">{projectToEdit ? "Save" : "Add Project"}</button>
-              <button type="button" onClick={closeModal}>Close</button>
+              <div>
+                <button type="submit">
+                  {language === "EN" ? "Save" : "Guardar"}
+                </button>
+                <button type="button" onClick={closeModal}>
+                  {language === "EN" ? "Cancel" : "Cancelar"}
+                </button>
+              </div>
             </form>
           </div>
         </div>

@@ -188,6 +188,30 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+/* Botón Add New Project */
+.add-btn {
+  color: black; /* Texto negro */
+  font-weight: bold; /* Opcional: para hacerlo más destacado */
+  background-color: white; /* Opcional: fondo blanco */
+  border: 1px solid #ccc; /* Opcional: un borde más definido */
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #f0f0f0; /* Opcional: fondo más claro al pasar el mouse */
+}
+
+/* Estilo para botones de acción con imágenes */
+button img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px; /* Espaciado entre la imagen y el texto */
+  vertical-align: middle; /* Alineación con el texto */
+}
+
 
 button:hover {
   background-color: #a3a5a7;
